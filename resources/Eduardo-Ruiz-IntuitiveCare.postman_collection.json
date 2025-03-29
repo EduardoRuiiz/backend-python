@@ -1,0 +1,192 @@
+{
+	"info": {
+		"_postman_id": "51d3a994-b095-4dbd-b03a-5c01bef31430",
+		"name": "Eduardo-Ruiz-IntuitiveCare",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38850950"
+	},
+	"item": [
+		{
+			"name": "Busca por Razão Social",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var template = `\r",
+							"<style type=\"text/css\">\r",
+							"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}\r",
+							"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}\r",
+							"    .tftable tr {background-color:#ffffff;}\r",
+							"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}\r",
+							"    .tftable tr:hover {background-color:#e0ffff;}\r",
+							"</style>\r",
+							"\r",
+							"<table class=\"tftable\" border=\"1\">\r",
+							"    <tr>\r",
+							"        <th>Bairro</th>\r",
+							"        <th>CEP</th>\r",
+							"        <th>CNPJ</th>\r",
+							"        <th>Cargo Representante</th>\r",
+							"        <th>Cidade</th>\r",
+							"        <th>Complemento</th>\r",
+							"        <th>DDD</th>\r",
+							"        <th>Data Registro ANS</th>\r",
+							"        <th>Endereco Eletronico</th>\r",
+							"        <th>Fax</th>\r",
+							"        <th>Logradouro</th>\r",
+							"        <th>Modalidade</th>\r",
+							"        <th>Nome Fantasia</th>\r",
+							"        <th>Numero</th>\r",
+							"        <th>Razao Social</th>\r",
+							"        <th>Regiao de Comercializacao</th>\r",
+							"        <th>Registro ANS</th>\r",
+							"        <th>Representante</th>\r",
+							"        <th>Telefone</th>\r",
+							"        <th>UF</th>\r",
+							"    </tr>\r",
+							"    \r",
+							"    {{#each response}}\r",
+							"        <tr>\r",
+							"            <td>{{Bairro}}</td>\r",
+							"            <td>{{CEP}}</td>\r",
+							"            <td>{{CNPJ}}</td>\r",
+							"            <td>{{Cargo_Representante}}</td>\r",
+							"            <td>{{Cidade}}</td>\r",
+							"            <td>{{Complemento}}</td>\r",
+							"            <td>{{DDD}}</td>\r",
+							"            <td>{{Data_Registro_ANS}}</td>\r",
+							"            <td>{{Endereco_eletronico}}</td>\r",
+							"            <td>{{Fax}}</td>\r",
+							"            <td>{{Logradouro}}</td>\r",
+							"            <td>{{Modalidade}}</td>\r",
+							"            <td>{{Nome_Fantasia}}</td>\r",
+							"            <td>{{Numero}}</td>\r",
+							"            <td>{{Razao_Social}}</td>\r",
+							"            <td>{{Regiao_de_Comercializacao}}</td>\r",
+							"            <td>{{Registro_ANS}}</td>\r",
+							"            <td>{{Representante}}</td>\r",
+							"            <td>{{Telefone}}</td>\r",
+							"            <td>{{UF}}</td>\r",
+							"        </tr>\r",
+							"    {{/each}}\r",
+							"</table>\r",
+							"`;\r",
+							"\r",
+							"function constructVisualizerPayload() {\r",
+							"    return {response: pm.response.json()}\r",
+							"}\r",
+							"\r",
+							"pm.visualizer.set(template, constructVisualizerPayload());"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/operadoras?busca=2B+ODONTOLOGIA+OPERADORA+DE+PLANOS+ODONTOLÓGICOS+LTDA",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "busca",
+							"value": "2B+ODONTOLOGIA+OPERADORA+DE+PLANOS+ODONTOLÓGICOS+LTDA"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca por Cidade",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/operadoras?busca=são+paulo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "busca",
+							"value": "são+paulo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Busca por Bairro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/operadoras?busca=centro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					],
+					"query": [
+						{
+							"key": "busca",
+							"value": "centro"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar todos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/operadoras",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"operadoras"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
