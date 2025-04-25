@@ -1,6 +1,8 @@
-# Etapa 4 - Backend Teste Técnico IntuitiveCare
+# Teste Backend em Python
 
-Este projeto é parte de um teste técnico para a IntuitiveCare.
+## Descrição
+
+Servidor Python que pega arquivos csv e interage com um cliente em Vue.js para realizar consultas de uma tabela.
 
 ## Pré-requisitos
 
